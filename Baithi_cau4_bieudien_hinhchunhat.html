@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biểu diễn hình chữ nhật</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="1000"></canvas>
+<script>
+    class Rectangle {
+        x;
+        y;
+        width;
+        height;
+        color;
+
+        constructor(x, y, width, height, color) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+            this.color = color;
+        }
+
+        render(canvas) {
+            let context = canvas.getContext("2d");
+            context.fillStyle = this.color;
+            context.fillRect(this.x, this.y, this.width, this.height);
+        }
+    }
+    let canvas = document.getElementById("canvas");
+    let hcn = new Rectangle(100, 100, 400, 300, "yellow");
+    hcn.render(canvas);
+
+</script>
+</body>
+</html>
